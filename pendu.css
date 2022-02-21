@@ -3,13 +3,21 @@ body {
     background-color: yellow;
 }
 
+fieldset.explications{
+    display: none;
+    border: 3px solid black !important;
+}
+
+legend.explications{
+    font-weight: bolder;
+}
+
 #lettresAlphabet {
     width: 690px;
 }
 
-.lettreCache {
-    display: inline-block;
-    width: 35px;
+#motMystere{
+    letter-spacing: 15px;
 }
 
 .boutonLettre {

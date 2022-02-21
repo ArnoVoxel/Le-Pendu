@@ -1,6 +1,7 @@
 //déclaration de variables
 var ascii = 65;
 var nbLettreJouee = 0;
+var partieActive = true;
 
 //création des boutons avec lettres
 for (let i = 0; i < 26; i++) {
@@ -21,39 +22,33 @@ function lettreCliquee() {
     score++;
 
     //affichage évolutif
-    switch (score) {
-        case 1:
-            document.getElementById('echafaud').setAttribute('src', 'img/p1.gif');
-            document.body.style.backgroundColor = "rgb(255, 200, 0)";
-            break;
-        case 2:
-            document.getElementById('echafaud').setAttribute('src', 'img/p2.gif');
-            document.body.style.backgroundColor = "rgb(255, 175, 0)";
-            break;
-        case 3:
-            document.getElementById('echafaud').setAttribute('src', 'img/p3.gif');
-            document.body.style.backgroundColor = "rgb(255, 120, 0)";
-            break;
-        case 4:
-            document.getElementById('echafaud').setAttribute('src', 'img/p4.gif');
-            document.body.style.backgroundColor = "rgb(255, 100, 0)";
-            break;
-        case 5:
-            document.getElementById('echafaud').setAttribute('src', 'img/p5.gif');
-            document.body.style.backgroundColor = "rgb(255, 50, 0)";
-            break;
-        case 6:
-            document.getElementById('echafaud').setAttribute('src', 'img/p6.gif');
-            document.body.style.backgroundColor = "rgb(255, 0, 0)";
-            sessionStorage.clear();
-            alert('PERDU!');
-            break;
+    if (score == 1 && partieActive) {
+        document.getElementById('echafaud').setAttribute('src', 'img/p1.gif');
+        document.body.style.backgroundColor = "rgb(255, 200, 0)";
+    } else if (score == 2 && partieActive) {
+        document.getElementById('echafaud').setAttribute('src', 'img/p2.gif');
+        document.body.style.backgroundColor = "rgb(255, 175, 0)";
+    } else if (score == 3 && partieActive) {
+        document.getElementById('echafaud').setAttribute('src', 'img/p3.gif');
+        document.body.style.backgroundColor = "rgb(255, 120, 0)";
+    } else if (score == 4 && partieActive) {
+        document.getElementById('echafaud').setAttribute('src', 'img/p4.gif');
+        document.body.style.backgroundColor = "rgb(255, 100, 0)";
+    } else if (score == 5 && partieActive) {
+        document.getElementById('echafaud').setAttribute('src', 'img/p5.gif');
+        document.body.style.backgroundColor = "rgb(255, 50, 0)";
+    } else if (score == 6 && partieActive) {
+        document.getElementById('echafaud').setAttribute('src', 'img/p6.gif');
+        document.body.style.backgroundColor = "rgb(255, 0, 0)";
+        partieActive = false;
     }
 
-    document.getElementById('infoDico').style.display = 'none';
-    document.getElementById('infosJeu').style.display = 'inline-block';
-    document.getElementById('lettresJouees').textContent += sessionStorage.getItem('lettreJouee'+nbLettreJouee);
-    document.getElementById('tours').textContent = 6 - score;
-    nbLettreJouee++;
-
+    if(partieActive){
+        document.getElementById('infoDico').style.display = 'none';
+        document.getElementById('infosJeu').style.display = 'inline-block';
+        document.getElementById('lettresJouees').textContent += sessionStorage.getItem('lettreJouee'+nbLettreJouee);
+        document.getElementById('tours').textContent = 6 - score;
+        nbLettreJouee++;
+    }
+    
 }

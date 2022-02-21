@@ -14,18 +14,18 @@
     <div class="row">
         <!-- colonne de gauche Mode d'emploi -->
         <div class="col-3">
-            <button>afficher le mode d'emploi</button>
-            <form>
-                <fieldset>
-                    <legend>Mode d'emploi</legend>
-                    <p>
-                        Pour deviner le mot inconnue ...
-                        <br> ... clic sur les lettres !
-                        <br> Vous serez Pendu à la 6ème erreur
-                    </p>
-                </fieldset>
-            </form>
-
+            <button id="explications">afficher le mode d'emploi</button>
+            
+            <fieldset id="texteExplications" class="explications">
+                <legend class="explications">Mode d'emploi</legend>
+                <p>
+                    Pour deviner le mot inconnue ...
+                    <br> ... clic sur les lettres !
+                    <br> Vous serez Pendu à la 6ème erreur
+                </p>
+            </fieldset>
+            
+            <button id="newGame">relancer une partie ?</button>
         </div>
         <!-- colonne de droite affichage du jeu -->
         <div class="col-9">
