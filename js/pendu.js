@@ -2,6 +2,7 @@
 var motSecret = document.getElementById('motMystere');
 var tMotSecret = [];
 var tMotCache = [];
+var score = 0;
 
 //valeur aléatoire dans le tableau dico
 var indiceMotDico = parseInt(Math.random() * 1600 + 1);
@@ -22,6 +23,9 @@ for (let i in tMotSecret) {
 
 afficherMotSecret();
 
+//enregistrer le mot secret et le mot cache en Session Storage
+sessionStorage.setItem('motSecret', indiceMotDico);
+
 //afficher mot à trouver
 function afficherMotSecret() {
     for (let i in tMotCache) {
@@ -32,3 +36,6 @@ function afficherMotSecret() {
         document.getElementById('motMystere').appendChild(newLettreCache);
     }
 }
+
+//test de la lettre cliquée vs cases de tMotSecret
+//fonctions
