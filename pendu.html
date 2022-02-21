@@ -32,12 +32,15 @@
             <div class="row">
                 <!-- titre -->
                 <div class="col-12">Le jeu du Pendu</div>
-                <div class="col-2"><img src="img/corde0.gif" alt=""></div>
-                <div id="echafaud" class="col-8"></div>
-                <div class="col-2"><img src="img/corde0.gif" alt=""></div>
+                <div class="col-2"><img class="img-fluid" src="img/corde0.gif" alt=""></div>
+                <div class="col-8"><img id="echafaud" class="img-fluid" src="img/p0.gif" alt=""></div>
+                <div class="col-2"><img class="img-fluid" src="img/corde0.gif" alt=""></div>
                 <div id="motMystere" class="col-12"></div>
                 <div id="lettresAlphabet" class="col-12"></div>
-                <div id="infosJeu" class="col-12">Mon dictionnaire contient 1600 mots</div>
+                <div id="infoDico" class="col-12">Mon dictionnaire contient 1600 mots</div>
+                <div id="infosJeu" class="col-12">
+                    Les lettres jouées sont : <span id="lettresJouees"></span> il vous reste <span id="tours"></span> tour(s) pour trouver
+                </div>
             </div>
         </div>
     </div>

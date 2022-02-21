@@ -36,6 +36,3 @@ function afficherMotSecret() {
         document.getElementById('motMystere').appendChild(newLettreCache);
     }
 }
-
-//test de la lettre cliquée vs cases de tMotSecret
-//fonctions
