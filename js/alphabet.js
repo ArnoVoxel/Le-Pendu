@@ -46,7 +46,7 @@ function lettreCliquee() {
         document.getElementById('echafaud').setAttribute('src', 'img/p6.gif');
         document.body.style.backgroundColor = "rgb(255, 0, 0)";
         partieActive = false;
-        alert("c'est perdu...");
+        alert("c'est perdu...\nle mot était : " + tMotSecret.join(''));
     }
 
     if(partieActive){
