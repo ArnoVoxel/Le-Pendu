@@ -22,6 +22,7 @@ sessionStorage.setItem('motSecret', indiceMotDico);
 
 function motAleatoire (){
     tMotSecret = dictionnaire[indiceMotDico].split('');
+    tMotCache = [];
     for (let i in tMotSecret) {
         if (i == 0) {
             tMotCache[0] = tMotSecret[0];
@@ -42,7 +43,7 @@ function afficherMotSecret() {
     //     // document.getElementById('motMystere').appendChild(newLettreCache);
     //     document.getElementById('motMystere').textContent += lettreCache;
     // }
-    document.getElementById('motMystere').innerHTML = " ";
+    document.getElementById('motMystere').innerHTML = "nouveau mot";
     document.getElementById('motMystere').innerHTML = tMotCache.join('');
 }
 
@@ -50,6 +51,7 @@ function startNewGame(){
 
     
     sessionStorage.clear();
+    document.body.style.backgroundColor = "rgb(255, 255, 0)";
     score = 0;
     partieActive = true;
     indiceMotDico = parseInt(Math.random() * 1600 + 1);
