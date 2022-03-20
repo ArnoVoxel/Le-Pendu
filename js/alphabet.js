@@ -8,18 +8,23 @@ for (let i = 0; i < 26; i++) {
     //création d'une div contenant les lettres de l'alphabet en incrémentant
     var lettre = String.fromCharCode(ascii);
     var newLettre = document.createElement('div');
-    newLettre.setAttribute('id', 'lettre' + ascii);
+    newLettre.setAttribute('id', ascii);
     newLettre.setAttribute('class', 'boutonLettre');
     newLettre.textContent = lettre;
     document.getElementById('lettresAlphabet').appendChild(newLettre);
-    document.getElementById('lettre' + ascii).addEventListener('click', lettreCliquee);
+    
+    document.getElementById(ascii).addEventListener('click', function(){
+        comparer(tMotSecret, this.id);
+    });
+    document.getElementById(ascii).addEventListener('click', lettreCliquee);
     ascii++;
 }
 
-//créer une fonction qui envoie la valeur de la lettre cliquée
+//créer une fonction qui affiche la valeur de la lettre cliquée
 function lettreCliquee() {
-    sessionStorage.setItem('lettreJouee' + score, this.innerHTML);
-    score++;
+    if(partieActive){
+        sessionStorage.setItem('lettreJouee' + nbLettreJouee, this.innerHTML);
+    }
 
     //affichage évolutif
     if (score == 1 && partieActive) {
@@ -41,14 +46,14 @@ function lettreCliquee() {
         document.getElementById('echafaud').setAttribute('src', 'img/p6.gif');
         document.body.style.backgroundColor = "rgb(255, 0, 0)";
         partieActive = false;
+        alert("c'est perdu...");
     }
 
     if(partieActive){
         document.getElementById('infoDico').style.display = 'none';
         document.getElementById('infosJeu').style.display = 'inline-block';
-        document.getElementById('lettresJouees').textContent += sessionStorage.getItem('lettreJouee'+nbLettreJouee);
+        document.getElementById('lettresJouees').textContent += " "+sessionStorage.getItem('lettreJouee'+nbLettreJouee);
         document.getElementById('tours').textContent = 6 - score;
         nbLettreJouee++;
     }
-    
 }

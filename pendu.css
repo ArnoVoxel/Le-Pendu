@@ -26,6 +26,9 @@ legend.explications{
     background-color: lightgray;
     width: 50px;
 }
+.boutonLettre:hover{
+    cursor: pointer;
+}
 
 #infosJeu{
     display: none;
