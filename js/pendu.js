@@ -63,6 +63,7 @@ function startNewGame(){
     document.getElementById('echafaud').setAttribute('src', 'img/p0.gif');
     document.getElementById('infoDico').style.display = 'inline-block';
     document.getElementById('infosJeu').style.display = 'none';
+    document.getElementById('solution').style.display = 'none';
     document.getElementById('lettresJouees').textContent = '';
     score = 0;
     nbLettreJouee = 0;
